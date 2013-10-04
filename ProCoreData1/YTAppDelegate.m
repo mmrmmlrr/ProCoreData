@@ -21,9 +21,9 @@
     
     
     if ([[UIDevice currentDevice] userInterfaceIdiom] == UIUserInterfaceIdiomPhone) {
-        self.viewController = [[ACTeamsViewController alloc] initWithNibName:@"YTViewController_iPhone" bundle:nil];
+        self.viewController = [[ACTeamsViewController alloc] initWithNibName:@"ACTeamsViewController_iPhone" bundle:nil];
     } else {
-        self.viewController = [[ACTeamsViewController alloc] initWithNibName:@"YTViewController_iPad" bundle:nil];
+        self.viewController = [[ACTeamsViewController alloc] initWithNibName:@"ACTeamsViewController_iPad" bundle:nil];
     }
     UINavigationController *navigationController = [[UINavigationController alloc] initWithRootViewController:self.viewController];
     self.window.rootViewController = navigationController;

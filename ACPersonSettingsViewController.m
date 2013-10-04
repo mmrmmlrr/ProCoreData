@@ -71,6 +71,8 @@ UIPickerViewDelegate
     [person setName:self.personNameTextField.text];
     [person setTeam:[self.teams objectAtIndex:[self.teamPicker selectedRowInComponent:0]]];
     
+    [self.navigationController popViewControllerAnimated:YES];
+    
 }
 
 - (IBAction)textFieldDidEndOnExit:(id)sender {
@@ -79,7 +81,7 @@ UIPickerViewDelegate
 
 - (void)showAlertView {
     NSString *title = @"Error";
-    NSString *message = @"Textfield can't be blank";
+    NSString *message = @"Textfield  can't be blank";
     NSString *cancelText = @"o.k.";
     UIAlertView *alertView = [[UIAlertView alloc] initWithTitle:title
                                                         message:message

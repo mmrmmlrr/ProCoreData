@@ -113,7 +113,8 @@ static NSString *const modelName = @"ProCoreDataModel";
 }
 
 -(id) createEntityForName:(NSString *)name {
-    NSManagedObject *newEntity = [NSEntityDescription insertNewObjectForEntityForName:name inManagedObjectContext:self.managedObjectContext];
+    NSManagedObject *newEntity = [NSEntityDescription insertNewObjectForEntityForName:name
+                                                                inManagedObjectContext:self.managedObjectContext];
     return newEntity;
 }
 
