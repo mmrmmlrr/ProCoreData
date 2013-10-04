@@ -7,8 +7,8 @@
 //
 
 #import "YTAppDelegate.h"
-#import "YTViewController.h"
-#import "YTDataManager.h"
+#import "ACTeamsViewController.h"
+#import "ACDataManager.h"
 
 @implementation YTAppDelegate
 
@@ -23,11 +23,12 @@
     
     
     if ([[UIDevice currentDevice] userInterfaceIdiom] == UIUserInterfaceIdiomPhone) {
-        self.viewController = [[YTViewController alloc] initWithNibName:@"YTViewController_iPhone" bundle:nil];
+        self.viewController = [[ACTeamsViewController alloc] initWithNibName:@"YTViewController_iPhone" bundle:nil];
     } else {
-        self.viewController = [[YTViewController alloc] initWithNibName:@"YTViewController_iPad" bundle:nil];
+        self.viewController = [[ACTeamsViewController alloc] initWithNibName:@"YTViewController_iPad" bundle:nil];
     }
-    self.window.rootViewController = self.viewController;
+    UINavigationController *navigationController = [[UINavigationController alloc] initWithRootViewController:self.viewController];
+    self.window.rootViewController = navigationController;
     [self.window makeKeyAndVisible];
     return YES;
 }

@@ -8,12 +8,12 @@
 
 #import <UIKit/UIKit.h>
 
-@class YTViewController;
+@class ACTeamsViewController;
 
 @interface YTAppDelegate : UIResponder <UIApplicationDelegate>
 
 @property (strong, nonatomic) UIWindow *window;
 
-@property (strong, nonatomic) YTViewController *viewController;
+@property (strong, nonatomic) ACTeamsViewController *viewController;
 
 @end

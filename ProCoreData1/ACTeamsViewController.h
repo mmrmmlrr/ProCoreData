@@ -1,5 +1,5 @@
 //
-//  YTBasicCanvas.h
+//  YTViewController.h
 //  ProCoreData1
 //
 //  Created by Aleksey on 03.10.13.
@@ -8,6 +8,6 @@
 
 #import <UIKit/UIKit.h>
 
-@interface YTBasicCanvas : UIView
+@interface ACTeamsViewController : UIViewController
 
 @end

@@ -6,12 +6,12 @@
 //  Copyright (c) 2013 yalantis. All rights reserved.
 //
 
-#import "YTDataManager.h"
+#import "ACDataManager.h"
 #import <CoreData/CoreData.h>
 
 static NSString *const modelName = @"ProCoreDataModel";
 
-@interface YTDataManager ()
+@interface ACDataManager ()
 
 @property (nonatomic, strong) NSManagedObjectContext *managedObjectContext;
 @property (nonatomic, strong) NSManagedObjectModel *managedObjectModel;
@@ -22,7 +22,7 @@ static NSString *const modelName = @"ProCoreDataModel";
 
 @end
 
-@implementation YTDataManager
+@implementation ACDataManager
 
 - (id)init {
     if (self = [super init]) {
@@ -36,7 +36,7 @@ static NSString *const modelName = @"ProCoreDataModel";
     static id sharedManager;
     static dispatch_once_t onceSharingManagerCreate;
     dispatch_once(&onceSharingManagerCreate, ^{
-        sharedManager = [[YTDataManager alloc] init];
+        sharedManager = [[ACDataManager alloc] init];
     });
     return sharedManager;
 }

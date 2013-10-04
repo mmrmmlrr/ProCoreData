@@ -8,7 +8,7 @@
 
 #import <Foundation/Foundation.h>
 
-@interface YTDataManager : NSObject
+@interface ACDataManager : NSObject
 
 + (id)sharedManager;
 

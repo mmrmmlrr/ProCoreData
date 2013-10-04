@@ -7,8 +7,9 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		5B8967E917FF5047009D5C9A /* ACPersonSettingsViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 5B8967E717FF5047009D5C9A /* ACPersonSettingsViewController.m */; };
+		5B8967EA17FF5047009D5C9A /* ACPersonSettingsViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 5B8967E817FF5047009D5C9A /* ACPersonSettingsViewController.xib */; };
 		829F2E8C17FD6D8500AAABEB /* ProCoreDataModel.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = 829F2E8A17FD6D8500AAABEB /* ProCoreDataModel.xcdatamodeld */; };
-		829F2E8F17FD8CDA00AAABEB /* YTBasicCanvas.m in Sources */ = {isa = PBXBuildFile; fileRef = 829F2E8E17FD8CDA00AAABEB /* YTBasicCanvas.m */; };
 		82AC9FA217FD5B2800151008 /* UIKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 82AC9FA117FD5B2800151008 /* UIKit.framework */; };
 		82AC9FA417FD5B2800151008 /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 82AC9FA317FD5B2800151008 /* Foundation.framework */; };
 		82AC9FA617FD5B2800151008 /* CoreGraphics.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 82AC9FA517FD5B2800151008 /* CoreGraphics.framework */; };
@@ -18,17 +19,18 @@
 		82AC9FB417FD5B2800151008 /* Default.png in Resources */ = {isa = PBXBuildFile; fileRef = 82AC9FB317FD5B2800151008 /* Default.png */; };
 		82AC9FB617FD5B2800151008 /* Default@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 82AC9FB517FD5B2800151008 /* Default@2x.png */; };
 		82AC9FB817FD5B2800151008 /* Default-568h@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 82AC9FB717FD5B2800151008 /* Default-568h@2x.png */; };
-		82AC9FBB17FD5B2800151008 /* YTViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 82AC9FBA17FD5B2800151008 /* YTViewController.m */; };
-		82AC9FBE17FD5B2800151008 /* YTViewController_iPhone.xib in Resources */ = {isa = PBXBuildFile; fileRef = 82AC9FBC17FD5B2800151008 /* YTViewController_iPhone.xib */; };
-		82AC9FC117FD5B2800151008 /* YTViewController_iPad.xib in Resources */ = {isa = PBXBuildFile; fileRef = 82AC9FBF17FD5B2800151008 /* YTViewController_iPad.xib */; };
-		82AC9FCC17FD5BC100151008 /* YTDataManager.m in Sources */ = {isa = PBXBuildFile; fileRef = 82AC9FCB17FD5BC100151008 /* YTDataManager.m */; };
+		82AC9FBB17FD5B2800151008 /* ACTeamsViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 82AC9FBA17FD5B2800151008 /* ACTeamsViewController.m */; };
+		82AC9FBE17FD5B2800151008 /* ACTeamsViewController_iPhone.xib in Resources */ = {isa = PBXBuildFile; fileRef = 82AC9FBC17FD5B2800151008 /* ACTeamsViewController_iPhone.xib */; };
+		82AC9FC117FD5B2800151008 /* ACTeamsViewController_iPad.xib in Resources */ = {isa = PBXBuildFile; fileRef = 82AC9FBF17FD5B2800151008 /* ACTeamsViewController_iPad.xib */; };
+		82AC9FCC17FD5BC100151008 /* ACDataManager.m in Sources */ = {isa = PBXBuildFile; fileRef = 82AC9FCB17FD5BC100151008 /* ACDataManager.m */; };
 		82FF84A417FD5DC600B06A48 /* CoreData.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 82FF84A317FD5DC600B06A48 /* CoreData.framework */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		5B8967E617FF5047009D5C9A /* ACPersonSettingsViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ACPersonSettingsViewController.h; sourceTree = "<group>"; };
+		5B8967E717FF5047009D5C9A /* ACPersonSettingsViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ACPersonSettingsViewController.m; sourceTree = "<group>"; };
+		5B8967E817FF5047009D5C9A /* ACPersonSettingsViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = ACPersonSettingsViewController.xib; sourceTree = "<group>"; };
 		829F2E8B17FD6D8500AAABEB /* ProCoreDataModel.xcdatamodel */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcdatamodel; path = ProCoreDataModel.xcdatamodel; sourceTree = "<group>"; };
-		829F2E8D17FD8CDA00AAABEB /* YTBasicCanvas.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = YTBasicCanvas.h; sourceTree = "<group>"; };
-		829F2E8E17FD8CDA00AAABEB /* YTBasicCanvas.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = YTBasicCanvas.m; sourceTree = "<group>"; };
 		82AC9F9E17FD5B2800151008 /* ProCoreData1.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = ProCoreData1.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		82AC9FA117FD5B2800151008 /* UIKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = UIKit.framework; path = System/Library/Frameworks/UIKit.framework; sourceTree = SDKROOT; };
 		82AC9FA317FD5B2800151008 /* Foundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Foundation.framework; path = System/Library/Frameworks/Foundation.framework; sourceTree = SDKROOT; };
@@ -42,12 +44,12 @@
 		82AC9FB317FD5B2800151008 /* Default.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = Default.png; sourceTree = "<group>"; };
 		82AC9FB517FD5B2800151008 /* Default@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "Default@2x.png"; sourceTree = "<group>"; };
 		82AC9FB717FD5B2800151008 /* Default-568h@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "Default-568h@2x.png"; sourceTree = "<group>"; };
-		82AC9FB917FD5B2800151008 /* YTViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; name = YTViewController.h; path = ProCoreData1/YTViewController.h; sourceTree = "<group>"; };
-		82AC9FBA17FD5B2800151008 /* YTViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; name = YTViewController.m; path = ProCoreData1/YTViewController.m; sourceTree = "<group>"; };
-		82AC9FBD17FD5B2800151008 /* en */ = {isa = PBXFileReference; lastKnownFileType = file.xib; name = en; path = en.lproj/YTViewController_iPhone.xib; sourceTree = "<group>"; };
-		82AC9FC017FD5B2800151008 /* en */ = {isa = PBXFileReference; lastKnownFileType = file.xib; name = en; path = en.lproj/YTViewController_iPad.xib; sourceTree = "<group>"; };
-		82AC9FCA17FD5BC100151008 /* YTDataManager.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = YTDataManager.h; sourceTree = "<group>"; };
-		82AC9FCB17FD5BC100151008 /* YTDataManager.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = YTDataManager.m; sourceTree = "<group>"; };
+		82AC9FB917FD5B2800151008 /* ACTeamsViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; name = ACTeamsViewController.h; path = ProCoreData1/ACTeamsViewController.h; sourceTree = "<group>"; };
+		82AC9FBA17FD5B2800151008 /* ACTeamsViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; name = ACTeamsViewController.m; path = ProCoreData1/ACTeamsViewController.m; sourceTree = "<group>"; };
+		82AC9FBD17FD5B2800151008 /* en */ = {isa = PBXFileReference; lastKnownFileType = file.xib; name = en; path = en.lproj/ACTeamsViewController_iPhone.xib; sourceTree = "<group>"; };
+		82AC9FC017FD5B2800151008 /* en */ = {isa = PBXFileReference; lastKnownFileType = file.xib; name = en; path = en.lproj/ACTeamsViewController_iPad.xib; sourceTree = "<group>"; };
+		82AC9FCA17FD5BC100151008 /* ACDataManager.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ACDataManager.h; sourceTree = "<group>"; };
+		82AC9FCB17FD5BC100151008 /* ACDataManager.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ACDataManager.m; sourceTree = "<group>"; };
 		82FF84A317FD5DC600B06A48 /* CoreData.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreData.framework; path = System/Library/Frameworks/CoreData.framework; sourceTree = SDKROOT; };
 /* End PBXFileReference section */
 
@@ -66,6 +68,27 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		5B8967EB17FF504D009D5C9A /* PersonSettingsViewController */ = {
+			isa = PBXGroup;
+			children = (
+				5B8967E617FF5047009D5C9A /* ACPersonSettingsViewController.h */,
+				5B8967E717FF5047009D5C9A /* ACPersonSettingsViewController.m */,
+				5B8967E817FF5047009D5C9A /* ACPersonSettingsViewController.xib */,
+			);
+			name = PersonSettingsViewController;
+			sourceTree = "<group>";
+		};
+		5B8967EC17FF505F009D5C9A /* TeamsViewController */ = {
+			isa = PBXGroup;
+			children = (
+				82AC9FB917FD5B2800151008 /* ACTeamsViewController.h */,
+				82AC9FBA17FD5B2800151008 /* ACTeamsViewController.m */,
+				82AC9FBC17FD5B2800151008 /* ACTeamsViewController_iPhone.xib */,
+				82AC9FBF17FD5B2800151008 /* ACTeamsViewController_iPad.xib */,
+			);
+			name = TeamsViewController;
+			sourceTree = "<group>";
+		};
 		829F2E9017FD8CE500AAABEB /* View */ = {
 			isa = PBXGroup;
 			children = (
@@ -77,8 +100,6 @@
 		82AC9F9517FD5B2800151008 = {
 			isa = PBXGroup;
 			children = (
-				829F2E8D17FD8CDA00AAABEB /* YTBasicCanvas.h */,
-				829F2E8E17FD8CDA00AAABEB /* YTBasicCanvas.m */,
 				82AC9FA717FD5B2800151008 /* ProCoreData1 */,
 				82AC9FA017FD5B2800151008 /* Frameworks */,
 				82AC9F9F17FD5B2800151008 /* Products */,
@@ -134,10 +155,8 @@
 		82AC9FC717FD5B7B00151008 /* ViewController */ = {
 			isa = PBXGroup;
 			children = (
-				82AC9FB917FD5B2800151008 /* YTViewController.h */,
-				82AC9FBA17FD5B2800151008 /* YTViewController.m */,
-				82AC9FBC17FD5B2800151008 /* YTViewController_iPhone.xib */,
-				82AC9FBF17FD5B2800151008 /* YTViewController_iPad.xib */,
+				5B8967EC17FF505F009D5C9A /* TeamsViewController */,
+				5B8967EB17FF504D009D5C9A /* PersonSettingsViewController */,
 			);
 			name = ViewController;
 			path = ..;
@@ -155,8 +174,8 @@
 		82AC9FC917FD5BAF00151008 /* Controller */ = {
 			isa = PBXGroup;
 			children = (
-				82AC9FCA17FD5BC100151008 /* YTDataManager.h */,
-				82AC9FCB17FD5BC100151008 /* YTDataManager.m */,
+				82AC9FCA17FD5BC100151008 /* ACDataManager.h */,
+				82AC9FCB17FD5BC100151008 /* ACDataManager.m */,
 			);
 			name = Controller;
 			sourceTree = "<group>";
@@ -216,9 +235,10 @@
 				82AC9FAC17FD5B2800151008 /* InfoPlist.strings in Resources */,
 				82AC9FB417FD5B2800151008 /* Default.png in Resources */,
 				82AC9FB617FD5B2800151008 /* Default@2x.png in Resources */,
+				5B8967EA17FF5047009D5C9A /* ACPersonSettingsViewController.xib in Resources */,
 				82AC9FB817FD5B2800151008 /* Default-568h@2x.png in Resources */,
-				82AC9FBE17FD5B2800151008 /* YTViewController_iPhone.xib in Resources */,
-				82AC9FC117FD5B2800151008 /* YTViewController_iPad.xib in Resources */,
+				82AC9FBE17FD5B2800151008 /* ACTeamsViewController_iPhone.xib in Resources */,
+				82AC9FC117FD5B2800151008 /* ACTeamsViewController_iPad.xib in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -231,10 +251,10 @@
 			files = (
 				82AC9FAE17FD5B2800151008 /* main.m in Sources */,
 				82AC9FB217FD5B2800151008 /* YTAppDelegate.m in Sources */,
-				82AC9FBB17FD5B2800151008 /* YTViewController.m in Sources */,
-				829F2E8F17FD8CDA00AAABEB /* YTBasicCanvas.m in Sources */,
+				82AC9FBB17FD5B2800151008 /* ACTeamsViewController.m in Sources */,
 				829F2E8C17FD6D8500AAABEB /* ProCoreDataModel.xcdatamodeld in Sources */,
-				82AC9FCC17FD5BC100151008 /* YTDataManager.m in Sources */,
+				5B8967E917FF5047009D5C9A /* ACPersonSettingsViewController.m in Sources */,
+				82AC9FCC17FD5BC100151008 /* ACDataManager.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -249,21 +269,21 @@
 			name = InfoPlist.strings;
 			sourceTree = "<group>";
 		};
-		82AC9FBC17FD5B2800151008 /* YTViewController_iPhone.xib */ = {
+		82AC9FBC17FD5B2800151008 /* ACTeamsViewController_iPhone.xib */ = {
 			isa = PBXVariantGroup;
 			children = (
 				82AC9FBD17FD5B2800151008 /* en */,
 			);
-			name = YTViewController_iPhone.xib;
+			name = ACTeamsViewController_iPhone.xib;
 			path = ProCoreData1;
 			sourceTree = "<group>";
 		};
-		82AC9FBF17FD5B2800151008 /* YTViewController_iPad.xib */ = {
+		82AC9FBF17FD5B2800151008 /* ACTeamsViewController_iPad.xib */ = {
 			isa = PBXVariantGroup;
 			children = (
 				82AC9FC017FD5B2800151008 /* en */,
 			);
-			name = YTViewController_iPad.xib;
+			name = ACTeamsViewController_iPad.xib;
 			path = ProCoreData1;
 			sourceTree = "<group>";
 		};
