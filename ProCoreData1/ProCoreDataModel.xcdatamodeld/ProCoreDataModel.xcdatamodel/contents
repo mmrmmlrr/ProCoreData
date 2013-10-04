@@ -1,11 +1,11 @@
 <?xml version="1.0" encoding="UTF-8" standalone="yes"?>
 <model userDefinedModelVersionIdentifier="" type="com.apple.IDECoreDataModeler.DataModel" documentVersion="1.0" lastSavedToolsVersion="3389" systemVersion="12E55" minimumToolsVersion="Xcode 4.3" macOSVersion="Automatic" iOSVersion="Automatic">
-    <entity name="ACPerson" syncable="YES">
+    <entity name="ACPerson" representedClassName="ACPerson" syncable="YES">
         <attribute name="birthDate" optional="YES" attributeType="Date" syncable="YES"/>
         <attribute name="name" optional="YES" attributeType="String" syncable="YES"/>
         <relationship name="team" optional="YES" maxCount="1" deletionRule="Nullify" destinationEntity="ACTeam" inverseName="persons" inverseEntity="ACTeam" syncable="YES"/>
     </entity>
-    <entity name="ACTeam" syncable="YES">
+    <entity name="ACTeam" representedClassName="ACTeam" syncable="YES">
         <attribute name="name" optional="YES" attributeType="String" syncable="YES"/>
         <relationship name="persons" optional="YES" maxCount="1" deletionRule="Nullify" destinationEntity="ACPerson" inverseName="team" inverseEntity="ACPerson" syncable="YES"/>
     </entity>

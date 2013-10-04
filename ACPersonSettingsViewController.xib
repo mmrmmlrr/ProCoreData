@@ -7,6 +7,9 @@
     <objects>
         <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner" customClass="ACPersonSettingsViewController">
             <connections>
+                <outlet property="personNameTextField" destination="vwp-a3-SKJ" id="d3l-s2-6Gp"/>
+                <outlet property="teamNameTextField" destination="3Md-mG-AhM" id="UJ7-eS-TJp"/>
+                <outlet property="teamPicker" destination="geu-a4-ULb" id="fOS-9s-2Pk"/>
                 <outlet property="view" destination="1" id="3"/>
             </connections>
         </placeholder>
@@ -15,25 +18,114 @@
             <rect key="frame" x="0.0" y="0.0" width="320" height="568"/>
             <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
             <subviews>
-                <label opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Name" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="8fH-a8-26a">
-                    <rect key="frame" x="20" y="73" width="46" height="21"/>
+                <label opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Name" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="8fH-a8-26a">
+                    <rect key="frame" x="20" y="88" width="46" height="21"/>
                     <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                    <constraints>
+                        <constraint firstAttribute="height" constant="21" id="2B7-eE-oxg"/>
+                        <constraint firstAttribute="width" constant="46" id="A5S-pF-ejP"/>
+                    </constraints>
                     <fontDescription key="fontDescription" type="system" pointSize="17"/>
                     <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
                     <nil key="highlightedColor"/>
                 </label>
-                <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="vwp-a3-SKJ">
-                    <rect key="frame" x="87" y="69" width="200" height="30"/>
+                <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="vwp-a3-SKJ">
+                    <rect key="frame" x="81" y="84" width="200" height="30"/>
                     <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                    <constraints>
+                        <constraint firstAttribute="width" constant="200" id="aUQ-66-Qsp"/>
+                        <constraint firstAttribute="height" constant="30" id="bXL-un-tFK"/>
+                    </constraints>
                     <fontDescription key="fontDescription" type="system" pointSize="14"/>
                     <textInputTraits key="textInputTraits"/>
+                    <connections>
+                        <action selector="textFieldDidEndOnExit:" destination="-1" eventType="editingDidEndOnExit" id="Uw2-QE-mDh"/>
+                    </connections>
                 </textField>
-                <pickerView contentMode="scaleToFill" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="geu-a4-ULb">
-                    <rect key="frame" x="0.0" y="271" width="320" height="162"/>
+                <label opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="New Team" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="qM0-a8-Hrf">
+                    <rect key="frame" x="14" y="191" width="81" height="21"/>
+                    <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                    <constraints>
+                        <constraint firstAttribute="width" constant="81" id="ERp-ZK-9r6"/>
+                        <constraint firstAttribute="height" constant="21" id="ZRP-uK-i5K"/>
+                    </constraints>
+                    <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                    <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
+                    <nil key="highlightedColor"/>
+                </label>
+                <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="3Md-mG-AhM">
+                    <rect key="frame" x="117" y="187" width="164" height="30"/>
+                    <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                    <constraints>
+                        <constraint firstAttribute="width" constant="164" id="7ez-ty-LwL"/>
+                        <constraint firstAttribute="height" constant="30" id="TC4-9W-R4m"/>
+                    </constraints>
+                    <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                    <textInputTraits key="textInputTraits"/>
+                    <connections>
+                        <action selector="textFieldDidEndOnExit:" destination="-1" eventType="editingDidEndOnExit" id="6f6-rr-t5Y"/>
+                    </connections>
+                </textField>
+                <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="mv9-z0-HBs">
+                    <rect key="frame" x="179" y="225" width="102" height="30"/>
+                    <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                    <constraints>
+                        <constraint firstAttribute="width" constant="102" id="8gl-3p-vQN"/>
+                        <constraint firstAttribute="height" constant="30" id="PW7-Tx-HxB"/>
+                    </constraints>
+                    <fontDescription key="fontDescription" type="system" pointSize="15"/>
+                    <state key="normal" title="Add new Team">
+                        <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
+                    </state>
+                    <connections>
+                        <action selector="addNewTeamButtonClick:" destination="-1" eventType="touchUpInside" id="765-d6-n1z"/>
+                    </connections>
+                </button>
+                <pickerView contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="geu-a4-ULb">
+                    <rect key="frame" x="0.0" y="347" width="320" height="162"/>
                     <autoresizingMask key="autoresizingMask" widthSizable="YES" flexibleMaxY="YES"/>
+                    <constraints>
+                        <constraint firstAttribute="width" constant="320" id="VnA-H5-LIl"/>
+                        <constraint firstAttribute="height" constant="162" id="u4I-6o-lXa"/>
+                    </constraints>
+                    <connections>
+                        <outlet property="dataSource" destination="-1" id="9eD-bY-drx"/>
+                        <outlet property="delegate" destination="-1" id="53k-qa-x28"/>
+                    </connections>
                 </pickerView>
+                <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="dNG-BR-ecj">
+                    <rect key="frame" x="95" y="509" width="131" height="39"/>
+                    <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                    <constraints>
+                        <constraint firstAttribute="width" constant="131" id="RU7-8g-9k0"/>
+                        <constraint firstAttribute="height" constant="39" id="wk1-DO-2HY"/>
+                    </constraints>
+                    <fontDescription key="fontDescription" type="system" pointSize="22"/>
+                    <state key="normal" title="Done">
+                        <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
+                    </state>
+                    <connections>
+                        <action selector="doneButtonClick:" destination="-1" eventType="touchUpInside" id="oBJ-6f-vns"/>
+                    </connections>
+                </button>
             </subviews>
             <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
+            <constraints>
+                <constraint firstAttribute="trailing" secondItem="mv9-z0-HBs" secondAttribute="trailing" constant="39" id="5K4-kG-bZr"/>
+                <constraint firstItem="vwp-a3-SKJ" firstAttribute="top" secondItem="1" secondAttribute="top" constant="84" id="776-7m-Lam"/>
+                <constraint firstItem="qM0-a8-Hrf" firstAttribute="top" secondItem="vwp-a3-SKJ" secondAttribute="bottom" constant="77" id="KzP-Sw-knR"/>
+                <constraint firstItem="qM0-a8-Hrf" firstAttribute="leading" secondItem="1" secondAttribute="leading" constant="14" id="MtV-ny-zOz"/>
+                <constraint firstAttribute="trailing" secondItem="3Md-mG-AhM" secondAttribute="trailing" constant="39" id="SZP-Op-xKF"/>
+                <constraint firstItem="3Md-mG-AhM" firstAttribute="top" secondItem="vwp-a3-SKJ" secondAttribute="bottom" constant="73" id="Td2-uj-LKl"/>
+                <constraint firstItem="dNG-BR-ecj" firstAttribute="top" secondItem="geu-a4-ULb" secondAttribute="bottom" id="WgQ-fk-2Le"/>
+                <constraint firstItem="geu-a4-ULb" firstAttribute="leading" secondItem="1" secondAttribute="leading" id="aTc-wO-oZM"/>
+                <constraint firstItem="mv9-z0-HBs" firstAttribute="top" secondItem="3Md-mG-AhM" secondAttribute="bottom" constant="8" id="amK-KY-CHd"/>
+                <constraint firstAttribute="bottom" secondItem="dNG-BR-ecj" secondAttribute="bottom" constant="20" id="ba6-JM-Mm0"/>
+                <constraint firstItem="8fH-a8-26a" firstAttribute="top" secondItem="1" secondAttribute="top" constant="88" id="ccA-68-NGK"/>
+                <constraint firstItem="dNG-BR-ecj" firstAttribute="leading" secondItem="1" secondAttribute="leading" constant="95" id="rHT-SM-acc"/>
+                <constraint firstItem="vwp-a3-SKJ" firstAttribute="leading" secondItem="8fH-a8-26a" secondAttribute="trailing" constant="15" id="zf7-PG-kBs"/>
+                <constraint firstItem="8fH-a8-26a" firstAttribute="leading" secondItem="1" secondAttribute="leading" constant="20" id="zuB-D4-2cr"/>
+            </constraints>
             <simulatedStatusBarMetrics key="simulatedStatusBarMetrics"/>
             <simulatedScreenMetrics key="simulatedDestinationMetrics" type="retina4"/>
         </view>

@@ -9,6 +9,7 @@
 #import "YTAppDelegate.h"
 #import "ACTeamsViewController.h"
 #import "ACDataManager.h"
+#import "ACDefaultsManager.h"
 
 @implementation YTAppDelegate
 
@@ -16,10 +17,7 @@
 {
     self.window = [[UIWindow alloc] initWithFrame:[[UIScreen mainScreen] bounds]];
     
-    //Initializing CoreData layer
-    
-    
-    //
+    [[ACDefaultsManager sharedManager] createDefaultTeamsIfNeeded];
     
     
     if ([[UIDevice currentDevice] userInterfaceIdiom] == UIUserInterfaceIdiomPhone) {

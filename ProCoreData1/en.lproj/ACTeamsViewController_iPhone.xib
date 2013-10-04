@@ -2,11 +2,12 @@
 <document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="4488.2" systemVersion="12E55" targetRuntime="iOS.CocoaTouch" variant="6xAndEarlier" propertyAccessControl="none" useAutolayout="YES">
     <dependencies>
         <deployment defaultVersion="1552" identifier="iOS"/>
-        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="4488.2"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="3715.3"/>
     </dependencies>
     <objects>
         <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner" customClass="ACTeamsViewController">
             <connections>
+                <outlet property="tableView" destination="ky6-N0-0U2" id="3s0-9T-nkg"/>
                 <outlet property="view" destination="6" id="7"/>
             </connections>
         </placeholder>
@@ -15,29 +16,17 @@
             <rect key="frame" x="0.0" y="64" width="320" height="504"/>
             <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
             <subviews>
-                <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="ey2-U6-iwu">
-                    <rect key="frame" x="0.0" y="0.0" width="320" height="252"/>
+                <tableView clipsSubviews="YES" contentMode="scaleToFill" fixedFrame="YES" alwaysBounceVertical="YES" style="plain" rowHeight="44" sectionHeaderHeight="22" sectionFooterHeight="22" translatesAutoresizingMaskIntoConstraints="NO" id="ky6-N0-0U2">
+                    <rect key="frame" x="0.0" y="0.0" width="320" height="504"/>
                     <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
-                    <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
-                </view>
-                <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="34J-hN-8zs">
-                    <rect key="frame" x="0.0" y="252" width="320" height="252"/>
-                    <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
-                    <color key="backgroundColor" red="0.074499335870000002" green="0.83447017769999998" blue="0.49353149899999998" alpha="1" colorSpace="calibratedRGB"/>
-                </view>
+                    <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                    <connections>
+                        <outlet property="dataSource" destination="-1" id="ibz-9C-Fij"/>
+                        <outlet property="delegate" destination="-1" id="aBz-SA-Da7"/>
+                    </connections>
+                </tableView>
             </subviews>
             <color key="backgroundColor" white="0.75" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
-            <constraints>
-                <constraint firstItem="34J-hN-8zs" firstAttribute="top" secondItem="ey2-U6-iwu" secondAttribute="bottom" id="5ab-l3-OeB"/>
-                <constraint firstItem="ey2-U6-iwu" firstAttribute="leading" secondItem="6" secondAttribute="leading" id="RWE-y9-Cg9"/>
-                <constraint firstItem="34J-hN-8zs" firstAttribute="top" secondItem="ey2-U6-iwu" secondAttribute="bottom" id="gJB-jp-KPh"/>
-                <constraint firstItem="ey2-U6-iwu" firstAttribute="height" secondItem="34J-hN-8zs" secondAttribute="height" id="hMW-De-7VF"/>
-                <constraint firstAttribute="trailing" secondItem="34J-hN-8zs" secondAttribute="trailing" id="jdP-TX-QoV"/>
-                <constraint firstAttribute="bottom" secondItem="34J-hN-8zs" secondAttribute="bottom" id="o6X-Ek-Ghv"/>
-                <constraint firstAttribute="trailing" secondItem="ey2-U6-iwu" secondAttribute="trailing" id="wX8-lK-xhw"/>
-                <constraint firstItem="ey2-U6-iwu" firstAttribute="top" secondItem="6" secondAttribute="top" id="xpF-VG-mUM"/>
-                <constraint firstItem="34J-hN-8zs" firstAttribute="leading" secondItem="6" secondAttribute="leading" id="z6w-yq-7a3"/>
-            </constraints>
             <simulatedStatusBarMetrics key="simulatedStatusBarMetrics"/>
             <simulatedNavigationBarMetrics key="simulatedTopBarMetrics" translucent="NO" prompted="NO"/>
             <simulatedScreenMetrics key="simulatedDestinationMetrics" type="retina4"/>

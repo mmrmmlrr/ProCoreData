@@ -12,4 +12,8 @@
 
 + (id)sharedManager;
 
+- (id)createEntityForName:(NSString *)name;
+- (NSArray *)allEntitiesForName:(NSString *)name;
+
 @end
+  

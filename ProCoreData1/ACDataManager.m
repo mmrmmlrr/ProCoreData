@@ -27,6 +27,11 @@ static NSString *const modelName = @"ProCoreDataModel";
 - (id)init {
     if (self = [super init]) {
         [self initializeCoreDataStack];
+        NSNotificationCenter *notificationCenter = [NSNotificationCenter defaultCenter];
+        [notificationCenter addObserver:self
+                               selector:@selector(applicationDidEnterBackground)
+                                   name:@"UIApplicationDidEnterBackgroundNotification"
+                                 object:nil];
     }
     return self;
 }
@@ -105,6 +110,23 @@ static NSString *const modelName = @"ProCoreDataModel";
 - (NSURL *)applicationDocumentsDirectory {
     return [[[NSFileManager defaultManager] URLsForDirectory:NSDocumentDirectory
                                                    inDomains:NSUserDomainMask] lastObject];
+}
+
+-(id) createEntityForName:(NSString *)name {
+    NSManagedObject *newEntity = [NSEntityDescription insertNewObjectForEntityForName:name inManagedObjectContext:self.managedObjectContext];
+    return newEntity;
+}
+
+- (NSArray *)allEntitiesForName:(NSString *)name {
+    NSFetchRequest *request = [[NSFetchRequest alloc] initWithEntityName:name];
+    [request setSortDescriptors:nil];
+    return [self.managedObjectContext executeFetchRequest:request error:nil];
+}
+
+#pragma mark -  Application Events observing
+
+- (void)applicationDidEnterBackground {
+    [self saveContext];
 }
 
 

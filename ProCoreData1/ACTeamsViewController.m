@@ -7,12 +7,18 @@
 //
 
 #import "ACTeamsViewController.h"
+#import "ACPersonSettingsViewController.h"
 #import <CoreData/CoreData.h>
 
 @interface ACTeamsViewController ()
+<
+UITableViewDataSource,
+UITableViewDelegate
+>
 
 @property (nonatomic, strong) NSManagedObjectContext *managedObjectContext;
 
+@property (weak, nonatomic) IBOutlet UITableView *tableView;
 
 @end
 
@@ -28,16 +34,13 @@
 
 
 - (void)createNewPersonButtonClick:(id)sender {
-    
+    ACPersonSettingsViewController *settingsController = [ACPersonSettingsViewController new];
+    [self.navigationController pushViewController:settingsController animated:YES];
 }
 
 
+#pragma mark - TableView delegate and datasource
 
-
-- (void)didReceiveMemoryWarning
-{
-    [super didReceiveMemoryWarning];
-    // Dispose of any resources that can be recreated.
-}
+- (NSInteger)tableView:(UITableView *)tableView numberOfRowsInSection:(NSInteger)section
 
 @end
