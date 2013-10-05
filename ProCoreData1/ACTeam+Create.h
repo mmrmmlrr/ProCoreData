@@ -10,8 +10,4 @@
 
 @interface ACTeam (Create)
 
-+ (ACTeam *)create;
-
-+ (NSArray *)findAll;
-
 @end

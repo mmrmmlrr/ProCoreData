@@ -10,8 +10,6 @@
 
 @interface ACPerson (Create)
 
-+ (ACPerson *)create;
 
-+ (NSArray *)findAll;
 
 @end

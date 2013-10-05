@@ -13,11 +13,4 @@ static NSString *const entityName = @"ACPerson";
 
 @implementation ACPerson (Create)
 
-+ (ACPerson *)create {
-    return [[ACDataManager sharedManager]createEntityForName:entityName];
-}
-+ (NSArray *)findAll {
-    return [[ACDataManager sharedManager]allEntitiesForName:entityName];
-}
-
 @end

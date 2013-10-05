@@ -26,7 +26,6 @@ static NSString *const modelName = @"ProCoreDataModel";
 
 - (id)init {
     if (self = [super init]) {
-        [self initializeCoreDataStack];
         NSNotificationCenter *notificationCenter = [NSNotificationCenter defaultCenter];
         [notificationCenter addObserver:self
                                selector:@selector(applicationDidEnterBackground)
@@ -44,10 +43,6 @@ static NSString *const modelName = @"ProCoreDataModel";
         sharedManager = [[ACDataManager alloc] init];
     });
     return sharedManager;
-}
-
-- (void)initializeCoreDataStack {
-    
 }
 
 - (void)saveContext {
