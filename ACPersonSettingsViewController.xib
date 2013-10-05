@@ -7,6 +7,7 @@
     <objects>
         <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner" customClass="ACPersonSettingsViewController">
             <connections>
+                <outlet property="ageTextField" destination="OWW-bH-snr" id="AYA-0f-tyk"/>
                 <outlet property="personNameTextField" destination="vwp-a3-SKJ" id="d3l-s2-6Gp"/>
                 <outlet property="teamNameTextField" destination="3Md-mG-AhM" id="UJ7-eS-TJp"/>
                 <outlet property="teamPicker" destination="geu-a4-ULb" id="fOS-9s-2Pk"/>
@@ -40,6 +41,26 @@
                     <textInputTraits key="textInputTraits"/>
                     <connections>
                         <action selector="textFieldDidEndOnExit:" destination="-1" eventType="editingDidEndOnExit" id="Uw2-QE-mDh"/>
+                    </connections>
+                </textField>
+                <label opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Age" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="V40-2r-Ohn">
+                    <rect key="frame" x="20" y="132" width="46" height="21"/>
+                    <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                    <constraints>
+                        <constraint firstAttribute="height" constant="21" id="n3I-yk-euP"/>
+                        <constraint firstAttribute="width" constant="46" id="veK-Ww-5fi"/>
+                    </constraints>
+                    <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                    <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
+                    <nil key="highlightedColor"/>
+                </label>
+                <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="OWW-bH-snr">
+                    <rect key="frame" x="81" y="128" width="200" height="30"/>
+                    <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                    <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                    <textInputTraits key="textInputTraits" keyboardType="numberPad"/>
+                    <connections>
+                        <action selector="textFieldDidEndOnExit:" destination="-1" eventType="editingDidEndOnExit" id="4Gv-l3-zMn"/>
                     </connections>
                 </textField>
                 <label opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="New Team" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="qM0-a8-Hrf">
@@ -113,6 +134,7 @@
             <constraints>
                 <constraint firstAttribute="trailing" secondItem="mv9-z0-HBs" secondAttribute="trailing" constant="39" id="5K4-kG-bZr"/>
                 <constraint firstItem="vwp-a3-SKJ" firstAttribute="top" secondItem="1" secondAttribute="top" constant="84" id="776-7m-Lam"/>
+                <constraint firstItem="V40-2r-Ohn" firstAttribute="top" secondItem="8fH-a8-26a" secondAttribute="bottom" constant="23" id="8js-SJ-DTw"/>
                 <constraint firstItem="qM0-a8-Hrf" firstAttribute="top" secondItem="vwp-a3-SKJ" secondAttribute="bottom" constant="77" id="KzP-Sw-knR"/>
                 <constraint firstItem="qM0-a8-Hrf" firstAttribute="leading" secondItem="1" secondAttribute="leading" constant="14" id="MtV-ny-zOz"/>
                 <constraint firstAttribute="trailing" secondItem="3Md-mG-AhM" secondAttribute="trailing" constant="39" id="SZP-Op-xKF"/>
@@ -122,6 +144,7 @@
                 <constraint firstItem="mv9-z0-HBs" firstAttribute="top" secondItem="3Md-mG-AhM" secondAttribute="bottom" constant="8" id="amK-KY-CHd"/>
                 <constraint firstAttribute="bottom" secondItem="dNG-BR-ecj" secondAttribute="bottom" constant="20" id="ba6-JM-Mm0"/>
                 <constraint firstItem="8fH-a8-26a" firstAttribute="top" secondItem="1" secondAttribute="top" constant="88" id="ccA-68-NGK"/>
+                <constraint firstItem="V40-2r-Ohn" firstAttribute="leading" secondItem="1" secondAttribute="leading" constant="20" id="jxN-W3-tv4"/>
                 <constraint firstItem="dNG-BR-ecj" firstAttribute="leading" secondItem="1" secondAttribute="leading" constant="95" id="rHT-SM-acc"/>
                 <constraint firstItem="vwp-a3-SKJ" firstAttribute="leading" secondItem="8fH-a8-26a" secondAttribute="trailing" constant="15" id="zf7-PG-kBs"/>
                 <constraint firstItem="8fH-a8-26a" firstAttribute="leading" secondItem="1" secondAttribute="leading" constant="20" id="zuB-D4-2cr"/>

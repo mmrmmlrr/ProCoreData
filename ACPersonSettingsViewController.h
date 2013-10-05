@@ -7,7 +7,15 @@
 //
 
 #import <UIKit/UIKit.h>
+@class ACPerson;
+
+typedef enum {
+    ACPersonSettingsModeCreate,
+    ACPersonSettingsModeEdit
+}ACPersonSettingsMode;
 
 @interface ACPersonSettingsViewController : UIViewController
 
+- (id)initWithPerson:(ACPerson *)person;
 @end
+

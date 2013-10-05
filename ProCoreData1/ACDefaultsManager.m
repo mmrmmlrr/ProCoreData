@@ -37,7 +37,7 @@ static NSString *const plistName = @"ACNamesList";
         NSArray *names = [dictionary valueForKey:keyForNames];
         NSArray *secondNames = [dictionary valueForKey:keyForSecondNames];
         
-        NSUInteger teamMembers = 3;
+        NSUInteger teamMembers = 5;
         
         for (NSUInteger idx = 0; idx < teamMembers; idx ++) {
             ACPerson *person = [ACPerson AC_create];
@@ -60,6 +60,8 @@ static NSString *const plistName = @"ACNamesList";
             [fullName appendString:secondName];
             
             [person setName:fullName];
+            
+            [person setAge:@(arc4random() % 30 + 18)];
             
         }
     }

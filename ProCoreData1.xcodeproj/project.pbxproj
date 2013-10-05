@@ -11,11 +11,11 @@
 		5B2FA3B217FFECFC0090B22A /* ACNamesList.plist in Resources */ = {isa = PBXBuildFile; fileRef = 5B2FA3B117FFECFC0090B22A /* ACNamesList.plist */; };
 		5B8967E917FF5047009D5C9A /* ACPersonSettingsViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 5B8967E717FF5047009D5C9A /* ACPersonSettingsViewController.m */; };
 		5B8967EA17FF5047009D5C9A /* ACPersonSettingsViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 5B8967E817FF5047009D5C9A /* ACPersonSettingsViewController.xib */; };
-		5B8967F217FF57D4009D5C9A /* ACPerson.m in Sources */ = {isa = PBXBuildFile; fileRef = 5B8967F117FF57D4009D5C9A /* ACPerson.m */; };
 		5B8967F817FF5922009D5C9A /* ACPerson+Create.m in Sources */ = {isa = PBXBuildFile; fileRef = 5B8967F717FF5922009D5C9A /* ACPerson+Create.m */; };
 		5B8967FB17FF5BB5009D5C9A /* ACTeam+Create.m in Sources */ = {isa = PBXBuildFile; fileRef = 5B8967FA17FF5BB5009D5C9A /* ACTeam+Create.m */; };
 		5B8967FF17FF63C1009D5C9A /* ACDefaultsManager.m in Sources */ = {isa = PBXBuildFile; fileRef = 5B8967FE17FF63C1009D5C9A /* ACDefaultsManager.m */; };
 		5B89680317FF6F05009D5C9A /* ACTeam.m in Sources */ = {isa = PBXBuildFile; fileRef = 5B89680217FF6F05009D5C9A /* ACTeam.m */; };
+		5B9CBF8718003FC400DEA36A /* ACPerson.m in Sources */ = {isa = PBXBuildFile; fileRef = 5B9CBF8618003FC400DEA36A /* ACPerson.m */; };
 		829F2E8C17FD6D8500AAABEB /* ProCoreDataModel.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = 829F2E8A17FD6D8500AAABEB /* ProCoreDataModel.xcdatamodeld */; };
 		82AC9FA217FD5B2800151008 /* UIKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 82AC9FA117FD5B2800151008 /* UIKit.framework */; };
 		82AC9FA417FD5B2800151008 /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 82AC9FA317FD5B2800151008 /* Foundation.framework */; };
@@ -40,8 +40,6 @@
 		5B8967E617FF5047009D5C9A /* ACPersonSettingsViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ACPersonSettingsViewController.h; sourceTree = "<group>"; };
 		5B8967E717FF5047009D5C9A /* ACPersonSettingsViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ACPersonSettingsViewController.m; sourceTree = "<group>"; };
 		5B8967E817FF5047009D5C9A /* ACPersonSettingsViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = ACPersonSettingsViewController.xib; sourceTree = "<group>"; };
-		5B8967F017FF57D4009D5C9A /* ACPerson.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ACPerson.h; sourceTree = "<group>"; };
-		5B8967F117FF57D4009D5C9A /* ACPerson.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ACPerson.m; sourceTree = "<group>"; };
 		5B8967F617FF5922009D5C9A /* ACPerson+Create.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "ACPerson+Create.h"; sourceTree = "<group>"; };
 		5B8967F717FF5922009D5C9A /* ACPerson+Create.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "ACPerson+Create.m"; sourceTree = "<group>"; };
 		5B8967F917FF5BB5009D5C9A /* ACTeam+Create.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "ACTeam+Create.h"; sourceTree = "<group>"; };
@@ -50,6 +48,8 @@
 		5B8967FE17FF63C1009D5C9A /* ACDefaultsManager.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ACDefaultsManager.m; sourceTree = "<group>"; };
 		5B89680117FF6F05009D5C9A /* ACTeam.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ACTeam.h; sourceTree = "<group>"; };
 		5B89680217FF6F05009D5C9A /* ACTeam.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ACTeam.m; sourceTree = "<group>"; };
+		5B9CBF8518003FC400DEA36A /* ACPerson.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ACPerson.h; sourceTree = "<group>"; };
+		5B9CBF8618003FC400DEA36A /* ACPerson.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ACPerson.m; sourceTree = "<group>"; };
 		829F2E8B17FD6D8500AAABEB /* ProCoreDataModel.xcdatamodel */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcdatamodel; path = ProCoreDataModel.xcdatamodel; sourceTree = "<group>"; };
 		82AC9F9E17FD5B2800151008 /* ProCoreData1.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = ProCoreData1.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		82AC9FA117FD5B2800151008 /* UIKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = UIKit.framework; path = System/Library/Frameworks/UIKit.framework; sourceTree = SDKROOT; };
@@ -129,6 +129,7 @@
 		5B8967F317FF57DA009D5C9A /* Model */ = {
 			isa = PBXGroup;
 			children = (
+				829F2E8A17FD6D8500AAABEB /* ProCoreDataModel.xcdatamodeld */,
 				5B8967F417FF57FD009D5C9A /* Person */,
 				5B8967F517FF5805009D5C9A /* Team */,
 			);
@@ -138,8 +139,8 @@
 		5B8967F417FF57FD009D5C9A /* Person */ = {
 			isa = PBXGroup;
 			children = (
-				5B8967F017FF57D4009D5C9A /* ACPerson.h */,
-				5B8967F117FF57D4009D5C9A /* ACPerson.m */,
+				5B9CBF8518003FC400DEA36A /* ACPerson.h */,
+				5B9CBF8618003FC400DEA36A /* ACPerson.m */,
 				5B8967F617FF5922009D5C9A /* ACPerson+Create.h */,
 				5B8967F717FF5922009D5C9A /* ACPerson+Create.m */,
 			);
@@ -236,7 +237,6 @@
 				82AC9FB317FD5B2800151008 /* Default.png */,
 				82AC9FB517FD5B2800151008 /* Default@2x.png */,
 				82AC9FB717FD5B2800151008 /* Default-568h@2x.png */,
-				829F2E8A17FD6D8500AAABEB /* ProCoreDataModel.xcdatamodeld */,
 			);
 			name = "Supporting Files";
 			sourceTree = "<group>";
@@ -339,8 +339,8 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				5B9CBF8718003FC400DEA36A /* ACPerson.m in Sources */,
 				5B2FA3AE17FFD94E0090B22A /* NSManagedObject+ACCoreDataHelpers.m in Sources */,
-				5B8967F217FF57D4009D5C9A /* ACPerson.m in Sources */,
 				82AC9FAE17FD5B2800151008 /* main.m in Sources */,
 				5B89680317FF6F05009D5C9A /* ACTeam.m in Sources */,
 				82AC9FB217FD5B2800151008 /* YTAppDelegate.m in Sources */,

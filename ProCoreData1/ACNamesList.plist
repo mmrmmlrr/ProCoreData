@@ -11,6 +11,7 @@
 		<string>Краснов</string>
 		<string>Чернов</string>
 		<string>Белов</string>
+		<string>Травин</string>
 		<string>Петренко</string>
 		<string>Кравец</string>
 		<string>Запорожец</string>
@@ -18,23 +19,38 @@
 		<string>Шевченко</string>
 		<string>Любимов</string>
 		<string>Тихонов</string>
-	</array>
-	<key>fatherNames</key>
-	<array>
-		<string>Алексеевич</string>
-		<string>Владимирович</string>
-		<string>Игоревич</string>
-		<string>Николаевич</string>
-		<string>Никифорович</string>
-		<string>Владиславович</string>
-		<string>Сергеевич</string>
-		<string>Дмитриевич</string>
-		<string>Юрьевич</string>
-		<string>Евгеньевич</string>
+		<string>Михайлов</string>
+		<string>Богданов</string>
+		<string>Москаленко</string>
+		<string>Маковецкий</string>
+		<string>Хохлов</string>
+		<string>Добровольский</string>
+		<string>Лебедев</string>
+		<string>Судаков</string>
+		<string>Харитонов</string>
+		<string>Кобылин</string>
+		<string>Евстигнеев</string>
+		<string>Вяземский</string>
+		<string>Соловьев</string>
 	</array>
 	<key>names</key>
 	<array>
 		<string>Алексей</string>
+		<string>Федор</string>
+		<string>Александр</string>
+		<string>Вячеслав</string>
+		<string>Артем</string>
+		<string>Антон</string>
+		<string>Петр</string>
+		<string>Михаил</string>
+		<string>Семен</string>
+		<string>Павел</string>
+		<string>Борис</string>
+		<string>Станислав</string>
+		<string>Остап</string>
+		<string>Эдуард</string>
+		<string>Евгений</string>
+		<string>Юрий</string>
 		<string>Иван</string>
 		<string>Никифор</string>
 		<string>Петр</string>

@@ -14,4 +14,6 @@
 
 + (NSArray *)AC_findAll;
 
++ (NSArray *)AC_findAllSortedBy:(NSString *)sortKey
+                      ascending:(BOOL)ascending;
 @end

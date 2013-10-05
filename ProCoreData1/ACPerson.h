@@ -2,7 +2,7 @@
 //  ACPerson.h
 //  ProCoreData1
 //
-//  Created by Aleksey on 04.10.13.
+//  Created by Aleksey on 05.10.13.
 //  Copyright (c) 2013 yalantis. All rights reserved.
 //
 
@@ -13,8 +13,8 @@
 
 @interface ACPerson : NSManagedObject
 
+@property (nonatomic, retain) NSNumber * age;
 @property (nonatomic, retain) NSString * name;
-@property (nonatomic, retain) NSDate * birthDate;
 @property (nonatomic, retain) ACTeam *team;
 
 @end
