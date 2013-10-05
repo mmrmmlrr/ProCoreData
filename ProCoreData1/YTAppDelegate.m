@@ -9,7 +9,6 @@
 #import "YTAppDelegate.h"
 #import "ACTeamsViewController.h"
 #import "ACDataManager.h"
-#import "ACDefaultsManager.h"
 
 @implementation YTAppDelegate
 
@@ -17,8 +16,7 @@
 {
     self.window = [[UIWindow alloc] initWithFrame:[[UIScreen mainScreen] bounds]];
     
-    [[ACDataManager sharedManager] setLoggingAllowed:YES];
-    [[ACDefaultsManager sharedManager] createDefaultTeamsIfNeeded];
+    [[ACDataManager sharedManager] setLoggingAllowed:NO];
     
     if ([[UIDevice currentDevice] userInterfaceIdiom] == UIUserInterfaceIdiomPhone) {
         self.viewController = [[ACTeamsViewController alloc] initWithNibName:@"ACTeamsViewController_iPhone" bundle:nil];

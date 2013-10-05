@@ -85,7 +85,7 @@ UIPickerViewDelegate
 
 - (IBAction)doneButtonClick:(id)sender {
     
-    if ([self.personNameTextField.text length] == 0 || [self.ageTextField.text length] == 0) {
+    if ([self.personNameTextField.text length] == 0 || [self.ageTextField.text length] == 0 ||![self.teams count]) {
         [self showAlertView];
         return;
     }
@@ -111,7 +111,10 @@ UIPickerViewDelegate
     [person setTeam:[self.teams objectAtIndex:[self.teamPicker selectedRowInComponent:0]]];
     
     [self.navigationController popViewControllerAnimated:YES];
-    
+}
+
+- (void)touchesBegan:(NSSet *)touches withEvent:(UIEvent *)event {
+    [self.view endEditing:YES];
 }
 
 - (IBAction)textFieldDidEndOnExit:(id)sender {

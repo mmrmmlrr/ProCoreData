@@ -19,6 +19,7 @@
 
 - (void)deleteEntity:(NSManagedObject *)entity;
 
+- (void)saveContext;
 
 @end
   

@@ -10,19 +10,21 @@
 #import "ACPersonSettingsViewController.h"
 #import "ACTeam+Create.h"
 #import "ACPerson+Create.h"
-#import <CoreData/CoreData.h>
+#import "ACDataManager.h"
+#import "ACDefaultsManager.h"
 
 @interface ACTeamsViewController ()
 <
 UITableViewDataSource,
-UITableViewDelegate
+UITableViewDelegate,
+NSFetchedResultsControllerDelegate
 >
 
 @property (nonatomic, strong) NSManagedObjectContext *managedObjectContext;
 
 @property (weak, nonatomic) IBOutlet UITableView *tableView;
 
-@property (nonatomic, strong) NSArray *teams;
+@property (nonatomic, strong) NSFetchedResultsController *fetchedResultsController;
 
 @end
 
@@ -30,6 +32,7 @@ UITableViewDelegate
 
 - (id)initWithNibName:(NSString *)nibNameOrNil bundle:(NSBundle *)nibBundleOrNil {
     if (self = [super initWithNibName:nibNameOrNil bundle:nibBundleOrNil]) {
+        [self initializeFetchedResultsController];
            }
     return self;
 }
@@ -40,13 +43,30 @@ UITableViewDelegate
     [self.navigationItem setRightBarButtonItem:createNewPersonButton];
 }
 
+- (void)viewDidAppear:(BOOL)animated {
+    [super viewDidAppear:animated];
+    [[ACDefaultsManager sharedManager] createDefaultTeamsIfNeeded];
+}
+
+- (void)initializeFetchedResultsController {
+    
+    NSFetchRequest *request = [[NSFetchRequest alloc] initWithEntityName:NSStringFromClass([ACPerson class])];
+    NSSortDescriptor *descriptor = [NSSortDescriptor sortDescriptorWithKey:@"name" ascending:YES];
+    [request setSortDescriptors:@[descriptor]];
+    NSManagedObjectContext *context = [[ACDataManager sharedManager] managedObjectContext];
+    
+    
+    self.fetchedResultsController = [[NSFetchedResultsController alloc] initWithFetchRequest:request
+                                                                        managedObjectContext:context
+                                                                          sectionNameKeyPath:@"team.name"
+                                                                                   cacheName:nil];
+    [self.fetchedResultsController setDelegate:self];
+    [self.fetchedResultsController performFetch:nil];
+    
+}
+
 - (void)viewWillAppear:(BOOL)animated {
     [super viewWillAppear:animated];
-    self.teams = [ACTeam AC_findAllSortedBy:@"name"
-                                  ascending:YES];
-
-    [self.tableView reloadData];
-    
 }
 
 
@@ -58,12 +78,12 @@ UITableViewDelegate
 #pragma mark - TableView delegate and datasource
 
 - (NSInteger)tableView:(UITableView *)tableView numberOfRowsInSection:(NSInteger)section {
-    ACTeam *team = [self.teams objectAtIndex:section];
-    return [team.persons count];
+    id <NSFetchedResultsSectionInfo> sectionInfo = [[self.fetchedResultsController sections] objectAtIndex:section];
+    return [sectionInfo numberOfObjects];
 }
 
 - (NSInteger)numberOfSectionsInTableView:(UITableView *)tableView {
-    return [self.teams count];
+    return [[self.fetchedResultsController sections] count];
 }
 
 - (UITableViewCell *)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath {
@@ -71,9 +91,8 @@ UITableViewDelegate
     if (!cell) {
         cell = [[UITableViewCell alloc] initWithStyle:UITableViewCellStyleDefault reuseIdentifier:@"cell"];
     }
-    ACTeam *team = [self.teams objectAtIndex:indexPath.section];
-    NSArray *persons = [team.persons allObjects];
-    ACPerson *person = [persons objectAtIndex:indexPath.row];
+    id <NSFetchedResultsSectionInfo> sectionInfo = [[self.fetchedResultsController sections] objectAtIndex:indexPath.section];
+    ACPerson *person = [[sectionInfo objects]objectAtIndex:indexPath.row];
     
     NSString *output = [NSString stringWithFormat:@"%@, %@", person.name, person.age];
 
@@ -94,20 +113,89 @@ UITableViewDelegate
     UIView *headerView = [[UIView alloc] initWithFrame:CGRectMake(0., 0., 320., 40.)];
     UILabel *label = [[UILabel alloc] initWithFrame:CGRectMake(10., 0., 320., 40.)];
     [headerView addSubview:label];
-    ACTeam *team = [self.teams objectAtIndex:section];
-    [label setText:team.name];
+    id <NSFetchedResultsSectionInfo> sectionInfo = [[self.fetchedResultsController sections] objectAtIndex:section];
+    [label setText:[sectionInfo name]];
     [label setFont:[UIFont fontWithName:@"Helvetica Bold" size:20]];
     return headerView;
 }
 
 - (void)tableView:(UITableView *)tableView didSelectRowAtIndexPath:(NSIndexPath *)indexPath {
-    ACTeam *team = [self.teams objectAtIndex:indexPath.section];
-    NSArray *persons = [team.persons allObjects];
-    ACPerson *person = [persons objectAtIndex:indexPath.row];
-    
+    id <NSFetchedResultsSectionInfo> sectionInfo = [[self.fetchedResultsController sections] objectAtIndex:indexPath.section];
+    ACPerson *person = [[sectionInfo objects]objectAtIndex:indexPath.row];
     ACPersonSettingsViewController *settingsController = [[ACPersonSettingsViewController alloc]initWithPerson:person];
     [self.navigationController pushViewController:settingsController animated:YES];
+}
+
+#pragma mark - NSFetchedResultsController delegate
+
+- (void)controllerWillChangeContent:(NSFetchedResultsController *)controller {
+    [self.tableView beginUpdates];
+}
+
+- (void)controllerDidChangeContent:(NSFetchedResultsController *)controller {
+    [self.tableView endUpdates];
+}
+
+- (void)controller:(NSFetchedResultsController *)controller
+  didChangeSection:(id<NSFetchedResultsSectionInfo>)sectionInfo
+           atIndex:(NSUInteger)sectionIndex
+     forChangeType:(NSFetchedResultsChangeType)type {
     
+    switch (type) {
+        case NSFetchedResultsChangeInsert:
+            [self.tableView insertSections:[NSIndexSet indexSetWithIndex:sectionIndex]
+                          withRowAnimation:UITableViewRowAnimationFade];
+            break;
+            
+        case NSFetchedResultsChangeDelete:
+            [self.tableView deleteSections:[NSIndexSet indexSetWithIndex:sectionIndex]
+                          withRowAnimation:UITableViewRowAnimationFade];
+            break;
+            
+        case NSFetchedResultsChangeUpdate:
+            [self.tableView reloadSections:[NSIndexSet indexSetWithIndex:sectionIndex]
+                          withRowAnimation:UITableViewRowAnimationFade];
+            break;
+            
+        case NSFetchedResultsChangeMove:
+            [self.tableView moveSection:sectionIndex toSection:sectionIndex];
+            
+        default:
+            break;
+    }
+
+}
+
+-(void)controller:(NSFetchedResultsController *)controller
+  didChangeObject:(id)anObject
+      atIndexPath:(NSIndexPath *)indexPath
+    forChangeType:(NSFetchedResultsChangeType)type
+     newIndexPath:(NSIndexPath *)newIndexPath {
+    
+    switch (type) {
+        case NSFetchedResultsChangeInsert:
+            [self.tableView insertRowsAtIndexPaths:@[newIndexPath]
+                                  withRowAnimation:UITableViewRowAnimationFade];
+            break;
+            
+        case NSFetchedResultsChangeUpdate:
+            [self.tableView reloadRowsAtIndexPaths:@[indexPath]
+                                  withRowAnimation:UITableViewRowAnimationFade];
+            break;
+
+        case NSFetchedResultsChangeDelete:
+            [self.tableView deleteRowsAtIndexPaths:@[indexPath]
+                                  withRowAnimation:UITableViewRowAnimationFade];
+            break;
+            
+        case NSFetchedResultsChangeMove:
+//            [self.tableView moveRowAtIndexPath:indexPath toIndexPath:newIndexPath];
+            [self.tableView deleteRowsAtIndexPaths:@[indexPath] withRowAnimation:UITableViewRowAnimationFade];
+            [self.tableView insertRowsAtIndexPaths:@[newIndexPath] withRowAnimation:UITableViewRowAnimationFade];
+        default:
+            break;
+    }
+
 }
 
 
