@@ -21,13 +21,13 @@ UIPickerViewDelegate
 @property (weak, nonatomic) IBOutlet UITextField *teamNameTextField;
 @property (weak, nonatomic) IBOutlet UITextField *ageTextField;
 @property (weak, nonatomic) IBOutlet UIPickerView *teamPicker;
+
 @property (nonatomic, strong) ACPerson *person;
 @property (nonatomic) NSUInteger mode;
 
 - (IBAction)addNewTeamButtonClick:(id)sender;
 - (IBAction)doneButtonClick:(id)sender;
 - (IBAction)textFieldDidEndOnExit:(id)sender;
-
 
 @end
 

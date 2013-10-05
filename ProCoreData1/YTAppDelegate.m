@@ -17,8 +17,8 @@
 {
     self.window = [[UIWindow alloc] initWithFrame:[[UIScreen mainScreen] bounds]];
     
+    [[ACDataManager sharedManager] setLoggingAllowed:YES];
     [[ACDefaultsManager sharedManager] createDefaultTeamsIfNeeded];
-    
     
     if ([[UIDevice currentDevice] userInterfaceIdiom] == UIUserInterfaceIdiomPhone) {
         self.viewController = [[ACTeamsViewController alloc] initWithNibName:@"ACTeamsViewController_iPhone" bundle:nil];

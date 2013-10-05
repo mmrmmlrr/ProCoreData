@@ -21,9 +21,13 @@
 
 + (NSArray *)AC_findAllSortedBy:(NSString *)sortKey
                       ascending:(BOOL)ascending {
+    
     NSArray *fetchedArray = [self AC_findAll];
+    
     NSArray *sortedArray = [fetchedArray sortedArrayUsingComparator:^NSComparisonResult(id obj1, id obj2) {
+        
         NSComparisonResult result = NSOrderedSame;
+        
         if (ascending) {
             result = [[obj1 valueForKey:sortKey] compare:[obj2 valueForKey:sortKey]];
         } else {

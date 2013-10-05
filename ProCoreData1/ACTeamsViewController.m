@@ -34,12 +34,10 @@ UITableViewDelegate
     return self;
 }
 
-- (void)viewDidLoad
-{
+- (void)viewDidLoad{
     [super viewDidLoad];
     UIBarButtonItem *createNewPersonButton = [[UIBarButtonItem alloc] initWithTitle:@"New" style:UIBarButtonItemStyleBordered target:self action:@selector(createNewPersonButtonClick:)];
     [self.navigationItem setRightBarButtonItem:createNewPersonButton];
-	// Do any additional setup after loading the view, typically from a nib.
 }
 
 - (void)viewWillAppear:(BOOL)animated {
@@ -55,7 +53,6 @@ UITableViewDelegate
     ACPersonSettingsViewController *settingsController = [[ACPersonSettingsViewController alloc]initWithPerson:nil];
     [self.navigationController pushViewController:settingsController animated:YES];
 }
-
 
 #pragma mark - TableView delegate and datasource
 

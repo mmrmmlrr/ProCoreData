@@ -10,6 +10,7 @@
 #import <CoreData/CoreData.h>
 
 static NSString *const modelName = @"ProCoreDataModel";
+ACDataManager *refToSelf;
 
 @interface ACDataManager ()
 
@@ -31,6 +32,7 @@ static NSString *const modelName = @"ProCoreDataModel";
                                selector:@selector(applicationDidEnterBackground)
                                    name:@"UIApplicationDidEnterBackgroundNotification"
                                  object:nil];
+        refToSelf = self;
     }
     return self;
 }
@@ -51,6 +53,8 @@ static NSString *const modelName = @"ProCoreDataModel";
     if (managedObjectContext != nil) {
         if ([managedObjectContext hasChanges] && ![managedObjectContext save:&error]) {
                 NSLog(@"Unresolved error %@, %@",error, [error userInfo]);
+        } else {
+                ACLog(@"Saving context on main thread");
         }
     }
 }
@@ -67,6 +71,7 @@ static NSString *const modelName = @"ProCoreDataModel";
         _managedObjectContext = [NSManagedObjectContext new];
         [_managedObjectContext setPersistentStoreCoordinator:coordinator];
     }
+    ACLog(@"CoreData stack initialized successfully");
     return _managedObjectContext;
 }
 
@@ -110,6 +115,7 @@ static NSString *const modelName = @"ProCoreDataModel";
 -(id) createEntityForName:(NSString *)name {
     NSManagedObject *newEntity = [NSEntityDescription insertNewObjectForEntityForName:name
                                                                 inManagedObjectContext:self.managedObjectContext];
+    ACLog([NSString stringWithFormat:@"Created entity: %@", name]);
     return newEntity;
 }
 
@@ -123,10 +129,16 @@ static NSString *const modelName = @"ProCoreDataModel";
 
 - (void)applicationDidEnterBackground {
     [self saveContext];
+
 }
 
+#pragma mark - Service methods and functions
 
-
-
-
+void ACLog(NSString *logMessage){
+    if ([refToSelf isLoggingAllowed]) {
+        NSLog(@"%@", logMessage);
+    }
+}
 @end
+
+

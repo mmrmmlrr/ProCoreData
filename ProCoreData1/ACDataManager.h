@@ -10,10 +10,13 @@
 
 @interface ACDataManager : NSObject
 
+@property (nonatomic, getter = isLoggingAllowed) BOOL loggingAllowed;
+
 + (id)sharedManager;
 
 - (id)createEntityForName:(NSString *)name;
 - (NSArray *)allEntitiesForName:(NSString *)name;
+
 
 @end
   
