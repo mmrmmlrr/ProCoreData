@@ -11,11 +11,11 @@
 
 @implementation NSManagedObject (ACCoreDataHelpers)
 
-+ (id)create {
++ (id)AC_create {
     return [[ACDataManager sharedManager]createEntityForName:NSStringFromClass(self)];
 }
 
-+ (NSArray *)findAll {
++ (NSArray *)AC_findAll {
     return [[ACDataManager sharedManager]allEntitiesForName:NSStringFromClass(self)];
 }
 

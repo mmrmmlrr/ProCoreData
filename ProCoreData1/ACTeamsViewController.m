@@ -30,7 +30,7 @@ UITableViewDelegate
 
 - (id)initWithNibName:(NSString *)nibNameOrNil bundle:(NSBundle *)nibBundleOrNil {
     if (self = [super initWithNibName:nibNameOrNil bundle:nibBundleOrNil]) {
-        self.teams = [ACTeam findAll];
+        self.teams = [ACTeam AC_findAll];
     }
     return self;
 }
@@ -45,7 +45,7 @@ UITableViewDelegate
 
 - (void)viewWillAppear:(BOOL)animated {
     [super viewWillAppear:animated];
-    self.teams = [ACTeam findAll];
+    self.teams = [ACTeam AC_findAll];
     [self.tableView reloadData];
 }
 
@@ -65,14 +65,6 @@ UITableViewDelegate
 
 - (NSInteger)numberOfSectionsInTableView:(UITableView *)tableView {
     return [self.teams count];
-}
-
-- (NSArray *)sectionIndexTitlesForTableView:(UITableView *)tableView {
-    NSMutableArray *sectionNames = [NSMutableArray array];
-    for (ACTeam *team in self.teams) {
-        [sectionNames addObject:team.name];
-    }
-    return sectionNames;
 }
 
 - (UITableViewCell *)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath {
@@ -99,5 +91,7 @@ UITableViewDelegate
     [label setText:team.name];
     return headerView;
 }
+
+
 
 @end

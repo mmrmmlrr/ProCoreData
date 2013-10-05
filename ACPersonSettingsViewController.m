@@ -34,7 +34,7 @@ UIPickerViewDelegate
 {
     self = [super initWithNibName:nibNameOrNil bundle:nibBundleOrNil];
     if (self) {
-        self.teams = [NSMutableArray arrayWithArray:[ACTeam findAll]];
+        self.teams = [NSMutableArray arrayWithArray:[ACTeam AC_findAll]];
         
     }
     return self;
@@ -53,7 +53,7 @@ UIPickerViewDelegate
         [self showAlertView];
         return;
     }
-    ACTeam *team = [ACTeam create];
+    ACTeam *team = [ACTeam AC_create];
     [team setName:self.teamNameTextField.text];
     
     [self.teams addObject:team];
@@ -67,7 +67,7 @@ UIPickerViewDelegate
         return;
     }
     
-    ACPerson *person = [ACPerson create];
+    ACPerson *person = [ACPerson AC_create];
     [person setName:self.personNameTextField.text];
     [person setTeam:[self.teams objectAtIndex:[self.teamPicker selectedRowInComponent:0]]];
     

@@ -10,8 +10,8 @@
 
 @interface NSManagedObject (ACCoreDataHelpers)
 
-+ (id)create;
++ (id)AC_create;
 
-+ (NSArray *)findAll;
++ (NSArray *)AC_findAll;
 
 @end

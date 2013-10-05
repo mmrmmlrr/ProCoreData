@@ -1,0 +1,48 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE plist PUBLIC "-//Apple//DTD PLIST 1.0//EN" "http://www.apple.com/DTDs/PropertyList-1.0.dtd">
+<plist version="1.0">
+<dict>
+	<key>secondNames</key>
+	<array>
+		<string>Иванов</string>
+		<string>Алексеев</string>
+		<string>Петров</string>
+		<string>Сидоров</string>
+		<string>Краснов</string>
+		<string>Чернов</string>
+		<string>Белов</string>
+		<string>Петренко</string>
+		<string>Кравец</string>
+		<string>Запорожец</string>
+		<string>Подгородний</string>
+		<string>Шевченко</string>
+		<string>Любимов</string>
+		<string>Тихонов</string>
+	</array>
+	<key>fatherNames</key>
+	<array>
+		<string>Алексеевич</string>
+		<string>Владимирович</string>
+		<string>Игоревич</string>
+		<string>Николаевич</string>
+		<string>Никифорович</string>
+		<string>Владиславович</string>
+		<string>Сергеевич</string>
+		<string>Дмитриевич</string>
+		<string>Юрьевич</string>
+		<string>Евгеньевич</string>
+	</array>
+	<key>names</key>
+	<array>
+		<string>Алексей</string>
+		<string>Иван</string>
+		<string>Никифор</string>
+		<string>Петр</string>
+		<string>Денис</string>
+		<string>Владимир</string>
+		<string>Николай</string>
+		<string>Олег</string>
+		<string>Дмитрий</string>
+	</array>
+</dict>
+</plist>

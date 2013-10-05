@@ -8,6 +8,7 @@
 
 /* Begin PBXBuildFile section */
 		5B2FA3AE17FFD94E0090B22A /* NSManagedObject+ACCoreDataHelpers.m in Sources */ = {isa = PBXBuildFile; fileRef = 5B2FA3AD17FFD94E0090B22A /* NSManagedObject+ACCoreDataHelpers.m */; };
+		5B2FA3B217FFECFC0090B22A /* ACNamesList.plist in Resources */ = {isa = PBXBuildFile; fileRef = 5B2FA3B117FFECFC0090B22A /* ACNamesList.plist */; };
 		5B8967E917FF5047009D5C9A /* ACPersonSettingsViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 5B8967E717FF5047009D5C9A /* ACPersonSettingsViewController.m */; };
 		5B8967EA17FF5047009D5C9A /* ACPersonSettingsViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 5B8967E817FF5047009D5C9A /* ACPersonSettingsViewController.xib */; };
 		5B8967F217FF57D4009D5C9A /* ACPerson.m in Sources */ = {isa = PBXBuildFile; fileRef = 5B8967F117FF57D4009D5C9A /* ACPerson.m */; };
@@ -35,6 +36,7 @@
 /* Begin PBXFileReference section */
 		5B2FA3AC17FFD94E0090B22A /* NSManagedObject+ACCoreDataHelpers.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "NSManagedObject+ACCoreDataHelpers.h"; sourceTree = "<group>"; };
 		5B2FA3AD17FFD94E0090B22A /* NSManagedObject+ACCoreDataHelpers.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "NSManagedObject+ACCoreDataHelpers.m"; sourceTree = "<group>"; };
+		5B2FA3B117FFECFC0090B22A /* ACNamesList.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = ACNamesList.plist; sourceTree = "<group>"; };
 		5B8967E617FF5047009D5C9A /* ACPersonSettingsViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ACPersonSettingsViewController.h; sourceTree = "<group>"; };
 		5B8967E717FF5047009D5C9A /* ACPersonSettingsViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ACPersonSettingsViewController.m; sourceTree = "<group>"; };
 		5B8967E817FF5047009D5C9A /* ACPersonSettingsViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = ACPersonSettingsViewController.xib; sourceTree = "<group>"; };
@@ -227,6 +229,7 @@
 			isa = PBXGroup;
 			children = (
 				82AC9FA917FD5B2800151008 /* ProCoreData1-Info.plist */,
+				5B2FA3B117FFECFC0090B22A /* ACNamesList.plist */,
 				82AC9FAA17FD5B2800151008 /* InfoPlist.strings */,
 				82AC9FAD17FD5B2800151008 /* main.m */,
 				82AC9FAF17FD5B2800151008 /* ProCoreData1-Prefix.pch */,
@@ -325,6 +328,7 @@
 				82AC9FB817FD5B2800151008 /* Default-568h@2x.png in Resources */,
 				82AC9FBE17FD5B2800151008 /* ACTeamsViewController_iPhone.xib in Resources */,
 				82AC9FC117FD5B2800151008 /* ACTeamsViewController_iPad.xib in Resources */,
+				5B2FA3B217FFECFC0090B22A /* ACNamesList.plist in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
