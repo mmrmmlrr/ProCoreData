@@ -22,9 +22,7 @@
 + (NSArray *)AC_findAllSortedBy:(NSString *)sortKey
                       ascending:(BOOL)ascending {
     
-    NSArray *fetchedArray = [self AC_findAll];
-    
-    NSArray *sortedArray = [fetchedArray sortedArrayUsingComparator:^NSComparisonResult(id obj1, id obj2) {
+    return [[self AC_findAll] sortedArrayUsingComparator:^NSComparisonResult(id obj1, id obj2) {
         
         NSComparisonResult result = NSOrderedSame;
         
@@ -35,8 +33,22 @@
         }
         return result;
     }];
+}
+
++ (NSArray *)AC_findByAttribute:(NSString *)attribute
+                               value:(id)value {
+    NSMutableArray *entities = [NSMutableArray array];
     
-    return sortedArray;
+    for (NSManagedObject *object in [self AC_findAll]) {
+        if ([[object valueForKey:attribute] isEqual:value]) {
+            [entities addObject:object];
+        }
+    }
+    return entities;
+}
+
+- (void)AC_delete {
+    [[ACDataManager sharedManager] deleteEntity:self];
 }
 
 @end

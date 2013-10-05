@@ -7,7 +7,7 @@
     </entity>
     <entity name="ACTeam" representedClassName="ACTeam" syncable="YES">
         <attribute name="name" optional="YES" attributeType="String" syncable="YES"/>
-        <relationship name="persons" optional="YES" toMany="YES" deletionRule="Nullify" destinationEntity="ACPerson" inverseName="team" inverseEntity="ACPerson" syncable="YES"/>
+        <relationship name="persons" optional="YES" toMany="YES" deletionRule="Cascade" destinationEntity="ACPerson" inverseName="team" inverseEntity="ACPerson" syncable="YES"/>
     </entity>
     <elements>
         <element name="ACPerson" positionX="0" positionY="0" width="0" height="0"/>

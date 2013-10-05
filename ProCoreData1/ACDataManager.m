@@ -112,12 +112,19 @@ ACDataManager *refToSelf;
                                                    inDomains:NSUserDomainMask] lastObject];
 }
 
--(id) createEntityForName:(NSString *)name {
+- (id)createEntityForName:(NSString *)name {
     NSManagedObject *newEntity = [NSEntityDescription insertNewObjectForEntityForName:name
                                                                 inManagedObjectContext:self.managedObjectContext];
     ACLog([NSString stringWithFormat:@"Created entity: %@", name]);
     return newEntity;
 }
+
+- (void)deleteEntity:(NSManagedObject *)entity {
+    [self.managedObjectContext deleteObject:entity];
+    ACLog([NSString stringWithFormat:@"Deleted entity: %@", NSStringFromClass([entity class])]);
+}
+
+
 
 - (NSArray *)allEntitiesForName:(NSString *)name {
     NSFetchRequest *request = [[NSFetchRequest alloc] initWithEntityName:name];

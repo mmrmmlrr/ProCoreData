@@ -28,37 +28,41 @@
 		<string>Лебедев</string>
 		<string>Судаков</string>
 		<string>Харитонов</string>
+		<string>Овечкин</string>
 		<string>Кобылин</string>
 		<string>Евстигнеев</string>
 		<string>Вяземский</string>
 		<string>Соловьев</string>
+		<string>Журавлев</string>
+		<string>Савченко</string>
 	</array>
 	<key>names</key>
 	<array>
-		<string>Алексей</string>
-		<string>Федор</string>
 		<string>Александр</string>
-		<string>Вячеслав</string>
-		<string>Артем</string>
+		<string>Алексей</string>
 		<string>Антон</string>
-		<string>Петр</string>
-		<string>Михаил</string>
-		<string>Семен</string>
-		<string>Павел</string>
+		<string>Артем</string>
 		<string>Борис</string>
-		<string>Станислав</string>
-		<string>Остап</string>
-		<string>Эдуард</string>
-		<string>Евгений</string>
-		<string>Юрий</string>
-		<string>Иван</string>
-		<string>Никифор</string>
-		<string>Петр</string>
-		<string>Денис</string>
+		<string>Виктор</string>
 		<string>Владимир</string>
+		<string>Вячеслав</string>
+		<string>Денис</string>
+		<string>Дмитрий</string>
+		<string>Евгений</string>
+		<string>Иван</string>
+		<string>Константин</string>
+		<string>Михаил</string>
+		<string>Никифор</string>
 		<string>Николай</string>
 		<string>Олег</string>
-		<string>Дмитрий</string>
+		<string>Остап</string>
+		<string>Павел</string>
+		<string>Петр</string>
+		<string>Семен</string>
+		<string>Станислав</string>
+		<string>Федор</string>
+		<string>Эдуард</string>
+		<string>Юрий</string>
 	</array>
 </dict>
 </plist>

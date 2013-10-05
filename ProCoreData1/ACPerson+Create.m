@@ -13,4 +13,9 @@ static NSString *const entityName = @"ACPerson";
 
 @implementation ACPerson (Create)
 
+- (NSString *)description {
+    return [NSString stringWithFormat:@"\nname: %@ \n"
+            "age: %i\n\n",self.name, [self.age integerValue]];
+}
+
 @end

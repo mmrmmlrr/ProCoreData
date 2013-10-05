@@ -21,6 +21,8 @@ UIPickerViewDelegate
 @property (weak, nonatomic) IBOutlet UITextField *teamNameTextField;
 @property (weak, nonatomic) IBOutlet UITextField *ageTextField;
 @property (weak, nonatomic) IBOutlet UIPickerView *teamPicker;
+@property (weak, nonatomic) IBOutlet UIButton *deleteButton;
+@property (weak, nonatomic) IBOutlet UIButton *deleteTeamButton;
 
 @property (nonatomic, strong) ACPerson *person;
 @property (nonatomic) NSUInteger mode;
@@ -28,6 +30,8 @@ UIPickerViewDelegate
 - (IBAction)addNewTeamButtonClick:(id)sender;
 - (IBAction)doneButtonClick:(id)sender;
 - (IBAction)textFieldDidEndOnExit:(id)sender;
+- (IBAction)deletePersonButtonClick:(id)sender;
+- (IBAction)deleteTeamButtonClick:(id)sender;
 
 @end
 
@@ -35,7 +39,7 @@ UIPickerViewDelegate
 
 - (id)initWithPerson:(ACPerson *)person {
     if (self = [super init]) {
-        self.teams = [NSMutableArray arrayWithArray:[ACTeam AC_findAll]];
+        [self updateTeamsArray];
         if (person) {
             self.person = person;
             [self setMode:ACPersonSettingsModeEdit];
@@ -47,6 +51,10 @@ UIPickerViewDelegate
     return self;
 }
 
+- (void)updateTeamsArray {
+            self.teams = [NSMutableArray arrayWithArray:[ACTeam AC_findAllSortedBy:@"name" ascending:YES]];
+}
+
 - (void)viewDidLoad
 {
     [super viewDidLoad];
@@ -55,6 +63,8 @@ UIPickerViewDelegate
         [self.ageTextField setText:[NSString stringWithFormat:@"%i",[self.person.age integerValue]]];
         NSUInteger teamIndex = [self.teams indexOfObject:self.person.team];
         [self.teamPicker selectRow:teamIndex inComponent:0 animated:NO];
+    } else {
+        [self.deleteButton setAlpha:0.f];
     }
 }
 
@@ -68,8 +78,8 @@ UIPickerViewDelegate
     ACTeam *team = [ACTeam AC_create];
     [team setName:self.teamNameTextField.text];
     
-    [self.teams addObject:team];
-    
+    [self updateTeamsArray];
+    [self.deleteTeamButton setAlpha:1.f];
     [self.teamPicker reloadAllComponents];
 }
 
@@ -106,6 +116,22 @@ UIPickerViewDelegate
 
 - (IBAction)textFieldDidEndOnExit:(id)sender {
     [self.view endEditing:YES];
+}
+
+- (IBAction)deletePersonButtonClick:(id)sender {
+    [self.person AC_delete];
+    [self.navigationController popViewControllerAnimated:YES];
+}
+
+- (IBAction)deleteTeamButtonClick:(id)sender {
+    if ([self.teams count]) {
+        [[self.teams objectAtIndex:[self.teamPicker selectedRowInComponent:0]]AC_delete];
+        [self updateTeamsArray];
+        if (![self.teams count]) {
+            [sender setAlpha:0.f];
+        }
+        [self.teamPicker reloadAllComponents];
+    }
 }
 
 - (void)showAlertView {

@@ -16,6 +16,8 @@
 		5B8967FF17FF63C1009D5C9A /* ACDefaultsManager.m in Sources */ = {isa = PBXBuildFile; fileRef = 5B8967FE17FF63C1009D5C9A /* ACDefaultsManager.m */; };
 		5B89680317FF6F05009D5C9A /* ACTeam.m in Sources */ = {isa = PBXBuildFile; fileRef = 5B89680217FF6F05009D5C9A /* ACTeam.m */; };
 		5B9CBF8718003FC400DEA36A /* ACPerson.m in Sources */ = {isa = PBXBuildFile; fileRef = 5B9CBF8618003FC400DEA36A /* ACPerson.m */; };
+		5B9CBF8C18006DF000DEA36A /* icon120x120.png in Resources */ = {isa = PBXBuildFile; fileRef = 5B9CBF8B18006DF000DEA36A /* icon120x120.png */; };
+		5B9CBF90180074DC00DEA36A /* icon_delete.png in Resources */ = {isa = PBXBuildFile; fileRef = 5B9CBF8F180074DC00DEA36A /* icon_delete.png */; };
 		829F2E8C17FD6D8500AAABEB /* ProCoreDataModel.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = 829F2E8A17FD6D8500AAABEB /* ProCoreDataModel.xcdatamodeld */; };
 		82AC9FA217FD5B2800151008 /* UIKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 82AC9FA117FD5B2800151008 /* UIKit.framework */; };
 		82AC9FA417FD5B2800151008 /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 82AC9FA317FD5B2800151008 /* Foundation.framework */; };
@@ -50,6 +52,8 @@
 		5B89680217FF6F05009D5C9A /* ACTeam.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ACTeam.m; sourceTree = "<group>"; };
 		5B9CBF8518003FC400DEA36A /* ACPerson.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ACPerson.h; sourceTree = "<group>"; };
 		5B9CBF8618003FC400DEA36A /* ACPerson.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ACPerson.m; sourceTree = "<group>"; };
+		5B9CBF8B18006DF000DEA36A /* icon120x120.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = icon120x120.png; sourceTree = "<group>"; };
+		5B9CBF8F180074DC00DEA36A /* icon_delete.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = icon_delete.png; sourceTree = "<group>"; };
 		829F2E8B17FD6D8500AAABEB /* ProCoreDataModel.xcdatamodel */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcdatamodel; path = ProCoreDataModel.xcdatamodel; sourceTree = "<group>"; };
 		82AC9F9E17FD5B2800151008 /* ProCoreData1.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = ProCoreData1.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		82AC9FA117FD5B2800151008 /* UIKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = UIKit.framework; path = System/Library/Frameworks/UIKit.framework; sourceTree = SDKROOT; };
@@ -176,6 +180,32 @@
 			name = DefaultsManager;
 			sourceTree = "<group>";
 		};
+		5B9CBF8818006DDE00DEA36A /* Resources */ = {
+			isa = PBXGroup;
+			children = (
+				5B9CBF8918006DE500DEA36A /* Images */,
+			);
+			name = Resources;
+			path = ProCoreData1;
+			sourceTree = "<group>";
+		};
+		5B9CBF8918006DE500DEA36A /* Images */ = {
+			isa = PBXGroup;
+			children = (
+				5B9CBF8F180074DC00DEA36A /* icon_delete.png */,
+				5B9CBF8A18006DEA00DEA36A /* Icon */,
+			);
+			name = Images;
+			sourceTree = "<group>";
+		};
+		5B9CBF8A18006DEA00DEA36A /* Icon */ = {
+			isa = PBXGroup;
+			children = (
+				5B9CBF8B18006DF000DEA36A /* icon120x120.png */,
+			);
+			name = Icon;
+			sourceTree = "<group>";
+		};
 		829F2E9017FD8CE500AAABEB /* View */ = {
 			isa = PBXGroup;
 			children = (
@@ -188,6 +218,7 @@
 			isa = PBXGroup;
 			children = (
 				82AC9FA717FD5B2800151008 /* ProCoreData1 */,
+				5B9CBF8818006DDE00DEA36A /* Resources */,
 				82AC9FA017FD5B2800151008 /* Frameworks */,
 				82AC9F9F17FD5B2800151008 /* Products */,
 			);
@@ -326,9 +357,11 @@
 				82AC9FB617FD5B2800151008 /* Default@2x.png in Resources */,
 				5B8967EA17FF5047009D5C9A /* ACPersonSettingsViewController.xib in Resources */,
 				82AC9FB817FD5B2800151008 /* Default-568h@2x.png in Resources */,
+				5B9CBF90180074DC00DEA36A /* icon_delete.png in Resources */,
 				82AC9FBE17FD5B2800151008 /* ACTeamsViewController_iPhone.xib in Resources */,
 				82AC9FC117FD5B2800151008 /* ACTeamsViewController_iPad.xib in Resources */,
 				5B2FA3B217FFECFC0090B22A /* ACNamesList.plist in Resources */,
+				5B9CBF8C18006DF000DEA36A /* icon120x120.png in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

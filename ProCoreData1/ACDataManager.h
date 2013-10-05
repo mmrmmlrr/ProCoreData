@@ -17,6 +17,8 @@
 - (id)createEntityForName:(NSString *)name;
 - (NSArray *)allEntitiesForName:(NSString *)name;
 
+- (void)deleteEntity:(NSManagedObject *)entity;
+
 
 @end
   

@@ -46,6 +46,7 @@ UITableViewDelegate
                                   ascending:YES];
 
     [self.tableView reloadData];
+    
 }
 
 

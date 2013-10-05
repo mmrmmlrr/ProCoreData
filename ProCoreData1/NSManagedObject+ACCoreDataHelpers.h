@@ -12,8 +12,15 @@
 
 + (id)AC_create;
 
+- (void)AC_delete;
+
 + (NSArray *)AC_findAll;
 
 + (NSArray *)AC_findAllSortedBy:(NSString *)sortKey
                       ascending:(BOOL)ascending;
+
++ (NSArray *)AC_findByAttribute:(NSString *)attribute
+                       value:(id)value;
+
+
 @end

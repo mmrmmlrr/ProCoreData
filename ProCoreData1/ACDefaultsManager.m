@@ -37,7 +37,7 @@ static NSString *const plistName = @"ACNamesList";
         NSArray *names = [dictionary valueForKey:keyForNames];
         NSArray *secondNames = [dictionary valueForKey:keyForSecondNames];
         
-        NSUInteger teamMembers = 5;
+        NSUInteger teamMembers = 10;
         
         for (NSUInteger idx = 0; idx < teamMembers; idx ++) {
             ACPerson *person = [ACPerson AC_create];
