@@ -128,7 +128,12 @@ UIPickerViewDelegate
 
 - (IBAction)deleteTeamButtonClick:(id)sender {
     if ([self.teams count]) {
-        [[self.teams objectAtIndex:[self.teamPicker selectedRowInComponent:0]]AC_delete];
+        ACTeam *team = [self.teams objectAtIndex:[self.teamPicker selectedRowInComponent:0]];
+        [team AC_delete];
+        if ([team isEqual:self.person.team]) {
+            [self.navigationController popViewControllerAnimated:YES];
+        }
+
         [self updateTeamsArray];
         if (![self.teams count]) {
             [sender setAlpha:0.f];
