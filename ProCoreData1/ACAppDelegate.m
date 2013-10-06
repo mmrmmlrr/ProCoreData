@@ -6,11 +6,11 @@
 //  Copyright (c) 2013 yalantis. All rights reserved.
 //
 
-#import "YTAppDelegate.h"
+#import "ACAppDelegate.h"
 #import "ACTeamsViewController.h"
 #import "ACDataManager.h"
 
-@implementation YTAppDelegate
+@implementation ACAppDelegate
 
 - (BOOL)application:(UIApplication *)application didFinishLaunchingWithOptions:(NSDictionary *)launchOptions
 {

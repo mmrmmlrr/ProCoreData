@@ -8,7 +8,7 @@
 
 #import <UIKit/UIKit.h>
 
-#import "YTAppDelegate.h"
+#import "ACAppDelegate.h"
 
 typedef int (*PYStdWriter)(void *, const char *, int);
 static PYStdWriter _oldStdWrite;
@@ -28,6 +28,6 @@ int main(int argc, char * argv[])
     stderr->_write = __pyStderrWrite;
     @autoreleasepool
     {
-        return UIApplicationMain(argc, argv, nil, NSStringFromClass([YTAppDelegate class]));
+        return UIApplicationMain(argc, argv, nil, NSStringFromClass([ACAppDelegate class]));
     }
 }

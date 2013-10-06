@@ -13,6 +13,9 @@
 #import "ACDataManager.h"
 #import "ACDefaultsManager.h"
 
+static NSString *const sortDescriptorKeyAge = @"age";
+static NSString *const sortDescriptorKeyName = @"name";
+
 @interface ACTeamsViewController ()
 <
 UITableViewDataSource,
@@ -26,13 +29,16 @@ NSFetchedResultsControllerDelegate
 
 @property (nonatomic, strong) NSFetchedResultsController *fetchedResultsController;
 
+@property (nonatomic, strong) NSString *currentSortDescriptorKey;
+
 @end
 
 @implementation ACTeamsViewController
 
 - (id)initWithNibName:(NSString *)nibNameOrNil bundle:(NSBundle *)nibBundleOrNil {
     if (self = [super initWithNibName:nibNameOrNil bundle:nibBundleOrNil]) {
-        [self initializeFetchedResultsController];
+        [self setCurrentSortDescriptorKey:sortDescriptorKeyName];
+        [self initializeFetchedResultsController:self.currentSortDescriptorKey];
            }
     return self;
 }
@@ -40,6 +46,10 @@ NSFetchedResultsControllerDelegate
 - (void)viewDidLoad{
     [super viewDidLoad];
     UIBarButtonItem *createNewPersonButton = [[UIBarButtonItem alloc] initWithTitle:@"New" style:UIBarButtonItemStyleBordered target:self action:@selector(createNewPersonButtonClick:)];
+    
+        UIBarButtonItem *reordeButton = [[UIBarButtonItem alloc] initWithTitle:@"sort" style:UIBarButtonItemStyleBordered target:self action:@selector(reorderButtonClick:)];
+    
+    [self.navigationItem setLeftBarButtonItem:reordeButton];
     [self.navigationItem setRightBarButtonItem:createNewPersonButton];
 }
 
@@ -48,10 +58,10 @@ NSFetchedResultsControllerDelegate
     [[ACDefaultsManager sharedManager] createDefaultTeamsIfNeeded];
 }
 
-- (void)initializeFetchedResultsController {
+- (void)initializeFetchedResultsController:(NSString *)sortDescriptor {
     
     NSFetchRequest *request = [[NSFetchRequest alloc] initWithEntityName:NSStringFromClass([ACPerson class])];
-    NSSortDescriptor *descriptor = [NSSortDescriptor sortDescriptorWithKey:@"name" ascending:YES];
+    NSSortDescriptor *descriptor = [NSSortDescriptor sortDescriptorWithKey:sortDescriptor ascending:YES];
     [request setSortDescriptors:@[descriptor]];
     NSManagedObjectContext *context = [[ACDataManager sharedManager] managedObjectContext];
     
@@ -73,6 +83,17 @@ NSFetchedResultsControllerDelegate
 - (void)createNewPersonButtonClick:(id)sender {
     ACPersonSettingsViewController *settingsController = [[ACPersonSettingsViewController alloc]initWithPerson:nil];
     [self.navigationController pushViewController:settingsController animated:YES];
+}
+
+- (void)reorderButtonClick:(id)sender {
+    
+    self.currentSortDescriptorKey == sortDescriptorKeyAge ? [self setCurrentSortDescriptorKey:sortDescriptorKeyName] : [self setCurrentSortDescriptorKey:sortDescriptorKeyAge];
+    
+    NSSortDescriptor *descriptor = [NSSortDescriptor sortDescriptorWithKey:self.currentSortDescriptorKey ascending:YES];
+    [self.fetchedResultsController.fetchRequest setSortDescriptors:@[descriptor]];
+    [self.fetchedResultsController performFetch:nil];
+    [self.tableView reloadData];
+    
 }
 
 #pragma mark - TableView delegate and datasource
@@ -158,7 +179,8 @@ NSFetchedResultsControllerDelegate
             break;
             
         case NSFetchedResultsChangeMove:
-            [self.tableView moveSection:sectionIndex toSection:sectionIndex];
+            [self.tableView moveSection:sectionIndex
+                              toSection:sectionIndex];
             
         default:
             break;
@@ -189,9 +211,11 @@ NSFetchedResultsControllerDelegate
             break;
             
         case NSFetchedResultsChangeMove:
-//            [self.tableView moveRowAtIndexPath:indexPath toIndexPath:newIndexPath];
-            [self.tableView deleteRowsAtIndexPaths:@[indexPath] withRowAnimation:UITableViewRowAnimationFade];
-            [self.tableView insertRowsAtIndexPaths:@[newIndexPath] withRowAnimation:UITableViewRowAnimationFade];
+            [self.tableView deleteRowsAtIndexPaths:@[indexPath]
+                                  withRowAnimation:UITableViewRowAnimationFade];
+            
+            [self.tableView insertRowsAtIndexPaths:@[newIndexPath]
+                                  withRowAnimation:UITableViewRowAnimationFade];
         default:
             break;
     }

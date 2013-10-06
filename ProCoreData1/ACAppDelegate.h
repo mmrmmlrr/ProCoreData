@@ -10,7 +10,7 @@
 
 @class ACTeamsViewController;
 
-@interface YTAppDelegate : UIResponder <UIApplicationDelegate>
+@interface ACAppDelegate : UIResponder <UIApplicationDelegate>
 
 @property (strong, nonatomic) UIWindow *window;
 
